@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "network-analysis-in-python"
+version = "0.1.0"
+description = ""
+authors = ["Mamoru Miura <mamo3gr@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+networkx = "*"
+numpy = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+black = "*"
+isort = "*"
+mypy = "*"
+flake8 = "*"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
