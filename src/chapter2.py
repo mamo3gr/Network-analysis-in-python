@@ -32,3 +32,16 @@ def dijkstra(matrix: np.ndarray, vertex: int) -> np.ndarray:
         logger.info(f"i<-{min_j}")
 
     return distance
+
+
+def warshall_floyd(matrix: np.ndarray) -> np.ndarray:
+    L = np.where(matrix == 0, np.inf, matrix)
+    np.fill_diagonal(L, 0)
+
+    n_vertices = matrix.shape[0]
+    for k in range(n_vertices):
+        for j in range(n_vertices):
+            for i in range(n_vertices):
+                L[i, j] = min(L[i, j], L[i, k] + L[k, j])
+
+    return L
